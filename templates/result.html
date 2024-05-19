@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .image-container {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 2px 7px 15px rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        h1,h2{
+            color: #ac6844;
+
+        }
+        button{
+            padding: 5px;
+            border-radius: 25px;
+            outline: none;
+            border: 0;
+            box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.7);
+            background-color:#ac6844 ;
+
+            cursor: pointer;
+position: absolute;
+right: 5%;
+top:5%
+        }
+        button a{
+            text-decoration: none;
+            color: rgb(255, 232, 184);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>   <button> <a href="/">Go Back</a></button>
+
+    <div class="container">
+        <div class="image-container">
+            <h2>Original Image</h2>
+            <img src="{{ url_for('send_uploaded_file', filename=original_filename) }}" alt="Original Image">
+        </div>
+        <div class="image-container">
+            <h2>Processed Image</h2>
+            <img src="{{ url_for('send_result_file', filename=processed_filename) }}" alt="Processed Image">
+        </div>
+    </div>
+</body>
+</html>
